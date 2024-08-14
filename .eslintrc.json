@@ -1,0 +1,13 @@
+{
+  "env": {
+    "es2020": true
+  },
+  "extends": "trybe-backend",
+  "rules": {
+    "sonarjs/no-duplicate-string": ["error", 5]
+  }
+}
+
+// env.es2020: Configura o linting para considerar as funcionalidades e sintaxes do ECMAScript 2020.
+// extends.trybe-backend: Usa um conjunto de regras de linting padrão definido pela Trybe para backend.
+// sonarjs/no-duplicate-string: Gera um erro se uma string específica aparecer mais de 5 vezes no código.
