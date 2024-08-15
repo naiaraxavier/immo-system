@@ -5,6 +5,6 @@ const {
 
 const router = express.Router();
 
-router.get('/', getAllPaymentDetailsByProperty);
+router.get('/all-data', getAllPaymentDetailsByProperty);
 
 module.exports = router;
