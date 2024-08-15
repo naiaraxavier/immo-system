@@ -9,15 +9,6 @@ const connection = mysql.createPool({
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0,
-  charset: 'utf8mb4',
 });
-
-const setCharset = async () => {
-  const conn = await connection.getConnection();
-  await conn.query('SET NAMES utf8mb4');
-  conn.release();
-};
-
-setCharset().catch(console.error);
 
 module.exports = connection;

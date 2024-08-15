@@ -1,4 +1,3 @@
-CREATE DATABASE IF NOT EXISTS real_estate_db CHARACTER SET UTF8mb4 COLLATE utf8mb4_bin;
 USE real_estate_db;
 
 -- -----------------------------------------------------
@@ -8,7 +7,7 @@ CREATE TABLE IF NOT EXISTS property_types (
   id_property_type INT NOT NULL AUTO_INCREMENT,
   property_type_name VARCHAR(45) NOT NULL,
   PRIMARY KEY (id_property_type)
-) DEFAULT CHARSET='UTF8mb4';
+);
 
 -- -----------------------------------------------------
 -- Add data to the table `property_types`
