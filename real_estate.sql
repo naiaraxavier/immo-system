@@ -186,3 +186,5 @@ INSERT INTO payments (payment_date, payment_amount, rental_id) VALUES
 ('2019-09-25', 1600.00, 13),
 ('2019-10-25', 1600.00, 13),
 ('2019-11-25', 1600.00, 13);
+
+
