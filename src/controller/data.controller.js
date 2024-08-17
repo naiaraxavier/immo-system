@@ -1,15 +1,19 @@
-const { getPaymentDetailsByProperty } = require('../model/data.model');
+const { PaymentRepository } = require('../model/data.model');
 
-const getAllPaymentDetailsByProperty = async (_req, res) => {
-  try {
-    const result = await getPaymentDetailsByProperty();
-    res.status(200).json(result);
-  } catch (err) {
-    console.log(err);
-    res.status(500).json({ message: err.sqlMessage });
+class PaymentController {
+  constructor() {
+    this.paymentRepository = new PaymentRepository();
   }
-};
 
-module.exports = {
-  getAllPaymentDetailsByProperty,
-};
+  async getAllPaymentDetailsByProperty(_req, res) {
+    try {
+      const result = await this.paymentRepository.getPaymentDetailsByProperty();
+      res.status(200).json(result);
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ message: err.sqlMessage });
+    }
+  }
+}
+
+module.exports = { PaymentController };

@@ -1,10 +1,11 @@
+const { PaymentController } = require('../controller/data.controller');
 const express = require('express');
-const {
-  getAllPaymentDetailsByProperty,
-} = require('../controller/data.controller');
 
 const router = express.Router();
+const paymentController = new PaymentController();
 
-router.get('/', getAllPaymentDetailsByProperty);
+router.get('/', (_req, res) =>
+  paymentController.getAllPaymentDetailsByProperty(_req, res),
+);
 
 module.exports = router;
