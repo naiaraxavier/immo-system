@@ -14,7 +14,7 @@ class PaymentService {
     }
   }
 
-  // Calcula a soma dos pagamentos por propriedade
+  // Calcula a soma dos pagamentos dos imóveis por código/id
   calculatePropertySums(payments) {
     return payments.reduce((acc, { code_property, payment_amount, property_description }) => {
       if (!acc[code_property]) {
@@ -46,7 +46,7 @@ class PaymentService {
     }, {});
   }
 
-  // Calcula o total de vendas
+  // Calcula o total de todas as vendas
   calculateTotalSales(propertyTypeSums) {
     return Object.values(propertyTypeSums).reduce((sum, { total_payment }) => sum + total_payment, 0);
   }
