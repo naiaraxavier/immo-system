@@ -1,7 +1,6 @@
 const mysql = require('mysql2/promise');
 
 class DatabaseConnection {
-  // eslint-disable-next-line complexity
   constructor() {
     this.pool = mysql.createPool({
       host: process.env.MYSQL_HOST || 'localhost',
