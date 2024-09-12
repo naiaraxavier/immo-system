@@ -1,14 +1,21 @@
-const conn = require('./connection-db');
+const dbConnection = require('./connection-db');
 const QUERY = require('./query');
 
-const getPaymentDetailsByProperty = async () => {
-  try {
-    const [result] = await conn.execute(QUERY);
-    return result;
-  } catch (error) {
-    console.error('Error executing query:', error);
-    throw error;
+class PaymentRepository {
+  constructor() {
+    this.query = QUERY;
   }
-};
 
-module.exports = { getPaymentDetailsByProperty };
+  async getPaymentDetailsByProperty() {
+    const conn = await dbConnection.getConnection();
+    try {
+      const [result] = await conn.execute(this.query);
+      return result;
+    } catch (error) {
+      console.error('Error executing query:', error);
+      throw error;
+    }
+  }
+}
+
+module.exports = { PaymentRepository };

@@ -1,0 +1,61 @@
+/* Reset de margens e padding para todos os elementos */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilo geral do corpo da página */
+body {
+  font-family: Arial, sans-serif;
+  background-color: cadetblue;
+}
+
+/* Estilo do elemento main */
+main {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 40px;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 20px 10px;
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+/* Estilo para os contêineres de gráficos */
+#linechart_div,
+#piechart_div,
+#barchart_div {
+  display: flex;
+  height: 600px;
+  width: 80%;
+  max-width: 1000px;
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+/* Estilo específico para cada gráfico */
+#linechart_div,
+#piechart_div {
+  flex: 1;
+}
+
+/* Estilo para elementos com borda arredondada */
+.payments-by-property {
+  border-radius: 25px;
+}
+
+/* Estilo para elementos que exibem pagamentos por propriedade e vendas e porcentagem */
+.payments-by-property {
+  background-color: #fff;
+}
+
+.payments-by-property,
+.sales-and-pecentage {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  justify-content: center;
+}
